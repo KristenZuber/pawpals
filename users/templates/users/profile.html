@@ -1,0 +1,19 @@
+{% extends "pawpals/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-3">{{ user.username }}</h1>
+  <p class="lead">{{ user.email }}</p>
+  <hr class="my-4">
+</div>
+
+
+  <!-- <div class = "content-section">
+    <div class = "account-heading"> {{ user.username }}</h2>
+      <p class = "text-secondary">{{ user.email }}</p>
+    </div>
+    <form method = "POST">
+      {% csrf_token %}
+    </form>
+  </div> -->
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "pawpals/base.html" %}
+{% load static %}
+{% block content %}
+  <h1>Available Bunnies</h1>
+  <div class="row">
+    {% for bunnies in bunnies %}
+    <div class="col-md-4 content-section">
+        <blockquote class="blockquote text-center">
+          <p class = "mb-0">{{ bunnies.name }} is {{ bunnies.description }}</p>
+          <img class = "scale-down" src = "/static/pawpals/images/{{ bunnies.picture.url }}">
+        </blockquote>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock content %}

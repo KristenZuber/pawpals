@@ -1,0 +1,21 @@
+{% extends "pawpals/base.html" %}
+{% block content %}
+
+  <h1>Leave us a review here!</h1>
+
+  {% for reviews in reviews %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          {{ reviews.author }} on {{ reviews.date|date:"d F Y" }}
+        </div>
+        <h2><a class="article-title" href="{% url 'review-detail' reviews.id %}">{{ reviews.title }}</a></h2>
+        <p class="article-content">{{ reviews.content }}</p>
+      </div>
+    </article>
+  {% endfor %}
+
+  <a class = "btn btn-secondary btn-sm mt-1 mb-1" href = "{% url 'review-create' %}">Leave us a Review!</a>
+
+
+{% endblock content %}
