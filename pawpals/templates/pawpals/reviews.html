@@ -1,10 +1,10 @@
 {% extends "pawpals/base.html" %}
 {% block content %}
 
-  <h1>Leave us a review here!</h1>
+  <h1 class="display-4">Leave us a review here!</h1>
 
   {% for reviews in reviews %}
-    <article class="media content-section">
+    <article class="media content-section" style = "background-color: #e9ecef">
       <div class="media-body">
         <div class="article-metadata">
           {{ reviews.author }} on {{ reviews.date|date:"d F Y" }}

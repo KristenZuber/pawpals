@@ -1,14 +1,19 @@
 {% extends "pawpals/base.html" %}
 {% load static %}
 {% block content %}
-  <h1>Available Bunnies</h1>
+  <h1 class="display-4">Available Bunnies</h1>
+
   <div class="row">
     {% for bunnies in bunnies %}
-    <div class="col-md-4 content-section">
+    <div class="col-md-4 content-section" style="background-color: #e9ecef">
         <blockquote class="blockquote text-center">
-          <p class = "mb-0">{{ bunnies.name }} is {{ bunnies.description }}</p>
-          <img class = "scale-down" src = "/static/pawpals/images/{{ bunnies.picture.url }}">
+          <p class = "mb-0">Meet {{ bunnies.name }}!</p>
+          <!-- <img class = "scale-down" src = "/static/pawpals/images/{{ bunnies.picture.url }}"> -->
+            <img style="height: 200px; width: 64%; display: center-block;" src= "/static/pawpals/images/{{ bunnies.picture.url }}" alt="Card image">
         </blockquote>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center" style="background-color: #e9ecef">{{ bunnies.name }} is {{ bunnies.description }}</li>
+        </ul>
     </div>
     {% endfor %}
   </div>
